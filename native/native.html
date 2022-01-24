@@ -1,0 +1,362 @@
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+    <!-- <script async src="./prebid4.38.0.js"></script> -->
+    <script async src="//localhost:8080/prebid.js"></script>
+    <script>
+      var PREBID_TIMEOUT = 5000;
+      var FAILSAFE_TIMEOUT = 5000;
+
+      var adUnits = [
+        {
+          code: '/22979003/header-bid-tag-1',
+          mediaTypes: {
+            native: {
+              sendTargetingKeys: true,
+              native: {
+                image: {
+                  sendId: true,
+                  required: true
+                },
+                icon: {
+                  required: false
+                },
+                cta: {
+                  sendId: true,
+                  required: false
+                },
+                title: {
+                  sendId: true,
+                  required: true,
+                  len: 80
+                },
+                sponsoredBy: {
+                  sendId: true,
+                  required: true
+                },
+                clickUrl: {
+                  sendId: true,
+                  required: true
+                },
+                body: {
+                  sendId: true,
+                  required: false
+                },
+                privacyLink: {
+                  required: false
+                },
+                privacyIcon: {
+                  required: false
+                }
+              }
+            }
+          },
+          bids: [
+            {
+              bidder: 'triplelift',
+              params: {
+                inventoryCode: 'Orange_Webmail_Native',
+                floor: 0
+              }
+            }
+          ]
+        },
+        {
+          code: '/22979003/header-bid-tag-3',
+          mediaTypes: {
+            banner: {
+              sizes: [[970, 250]]
+            }
+          },
+          bids: [
+            {
+              bidder: 'triplelift',
+              params: {
+                inventoryCode: 'Quizlet_Desktop_300x250_prebid'
+              }
+            }
+          ]
+        },
+        {
+          code: '/22979003/header-bid-tag-2',
+          mediaTypes: {
+            native: {
+              sendTargetingKeys: true,
+              image: {
+                required: false
+              },
+              title: {
+                required: false
+              },
+              sponsoredBy: {
+                required: false
+              },
+              clickUrl: {
+                required: false
+              },
+              privacyLink: {
+                required: false
+              },
+              body: {
+                required: false
+              },
+              icon: {
+                required: false
+              }
+            }
+          },
+          bids: [
+            {
+              bidder: 'triplelift',
+              params: {
+                inventoryCode: 'Orange_Webmail_Native',
+                floor: 0
+              }
+            }
+          ]
+        },
+        {
+          code: '/22979003/header-bid-tag-4',
+          mediaTypes: {
+            banner: {
+              sizes: [[300, 250]]
+            }
+          },
+          bids: [
+            {
+              bidder: 'triplelift',
+              params: {
+                inventoryCode: 'Quizlet_Desktop_300x250_prebid'
+              }
+            }
+          ]
+        }
+      ];
+
+      var googletag = googletag || {};
+      googletag.cmd = googletag.cmd || [];
+
+      var pbjs = pbjs || {};
+      pbjs.que = pbjs.que || [];
+
+      googletag.cmd.push(function () {
+        googletag.pubads().disableInitialLoad();
+
+        googletag
+          .defineSlot('/22979003/header-bid-tag-1', ['fluid'], 'div-1')
+          .addService(googletag.pubads());
+
+        googletag
+          .defineSlot('/22979003/header-bid-tag-2', ['fluid'], 'div-2')
+          .addService(googletag.pubads());
+
+        googletag
+          .defineSlot('/22979003/header-bid-tag-3', [[970, 250]], 'div-3')
+          .addService(googletag.pubads());
+
+        googletag
+          .defineSlot('/22979003/header-bid-tag-4', [[300, 250]], 'div-4')
+          .addService(googletag.pubads());
+
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+
+        pbjs.setConfig({
+          schain: {
+            validation: 'strict',
+            config: {
+              ver: '1.0',
+              complete: 1,
+              nodes: [
+                {
+                  asi: 'indirectseller.com',
+                  sid: '00001',
+                  hp: 1
+                }
+              ]
+            }
+          }
+        });
+
+        pbjs.setConfig({
+          ortb2: {
+            site: {
+              name: 'example',
+              domain: 'page.example.com',
+              cat: ['IAB2'],
+              sectioncat: ['IAB2-2'],
+              pagecat: ['IAB2-2'],
+              page: 'https://page.example.com/here.html',
+              ref: 'https://ref.example.com',
+              keywords: 'power tools, drills',
+              search: 'drill',
+              content: {
+                userrating: '4',
+                data: [
+                  {
+                    name: 'www.dataprovider1.com',
+                    ext: { segtax: 1 },
+                    segment: [{ id: '687' }, { id: '123' }]
+                  }
+                ]
+              },
+              ext: {
+                data: {
+                  // fields that aren't part of openrtb 2.5
+                  pageType: 'article',
+                  category: 'repair'
+                }
+              }
+            },
+            user: {
+              yob: 1985,
+              gender: 'm',
+              keywords: 'a,b',
+              data: [
+                {
+                  name: 'dataprovider.com',
+                  ext: { segtax: 3 },
+                  segment: [{ id: '1' }]
+                }
+              ],
+              ext: {
+                data: {
+                  registered: true,
+                  interests: ['cars']
+                }
+              }
+            }
+          }
+        });
+
+        pbjs.setConfig({
+          floors: {
+            enforcement: {
+              floorDeals: false, //default to false
+              bidAdjustment: true
+            },
+            data: {
+              currency: 'USD',
+              skipRate: 5,
+              modelVersion: 'some setconfig model version',
+              schema: {
+                fields: ['gptSlot', 'mediaType']
+              },
+              values: {
+                '*|banner': 0.98,
+                '*|video': 1.74,
+                '*|native': 0.01
+              }
+            }
+          }
+        });
+
+        pbjs.setConfig({
+          userSync: {
+            userIds: [
+              {
+                name: 'pubCommonId',
+                storage: {
+                  type: 'cookie',
+                  name: '_pubcid', // create a cookie with this name
+                  expires: 365 // expires in 1 years
+                }
+              },
+              {
+                name: 'identityLink',
+                params: {
+                  pid: '999' // Set your real identityLink placement ID here
+                  // notUse3P: true/false    // If you do not want to use 3P endpoint to retrieve the envelope. If you do not set this property to true, 3P endpoint will be fired. By default this property is undefined and 3P request will be fired.
+                },
+                storage: {
+                  type: 'cookie',
+                  name: 'idl_env', // create a cookie with this name
+                  expires: 30 // cookie can last for 30 days
+                }
+              },
+              {
+                name: 'unifiedId',
+                value: { tdid: 'D6885E90-2A7A-4E0F-87CB-7734ED1B99A3' }
+              },
+              { name: 'criteo' }
+            ]
+          }
+        });
+
+        pbjs.setConfig({
+          consentManagement: {
+            gdpr: {
+              cmpApi: 'static',
+              consentData: {
+                getTCData: {
+                  tcString:
+                    'COwK6gaOwK6gaFmAAAENAPCAAAAAAAAAAAAAAAAAAAAA.IFoEUQQgAIQwgIwQABAEAAAAOIAACAIAAAAQAIAgEAACEAAAAAgAQBAAAAAAAGBAAgAAAAAAAFAAECAAAgAAQARAEQAAAAAJAAIAAgAAAYQEAAAQmAgBC3ZAYzUw',
+                  gdprApplies: true
+                }
+              }
+            }
+          }
+        });
+
+        pbjs.que.push(function () {
+          pbjs.addAdUnits(adUnits);
+          pbjs.requestBids({
+            bidsBackHandler: initAdserver,
+            timeout: PREBID_TIMEOUT
+          });
+        });
+      });
+
+      function initAdserver() {
+        if (pbjs.initAdserverSet) return;
+        pbjs.initAdserverSet = true;
+        googletag.cmd.push(function () {
+          pbjs.setTargetingForGPTAsync && pbjs.setTargetingForGPTAsync();
+          googletag.pubads().refresh();
+        });
+      }
+
+      // in case PBJS doesn't load
+      setTimeout(function () {
+        initAdserver();
+      }, FAILSAFE_TIMEOUT);
+    </script>
+  </head>
+
+  <body>
+    <h2>Basic Prebid.js Native Example</h2>
+    <h5>Div-1</h5>
+    <div id="div-1">
+      <script type="text/javascript">
+        googletag.cmd.push(function () {
+          googletag.display('div-1');
+        });
+      </script>
+    </div>
+    <h5>Div-2</h5>
+    <div id="div-2">
+      <script type="text/javascript">
+        googletag.cmd.push(function () {
+          googletag.display('div-2');
+        });
+      </script>
+    </div>
+    <h5>Div-3</h5>
+    <div id="div-3">
+      <script type="text/javascript">
+        googletag.cmd.push(function () {
+          googletag.display('div-3');
+        });
+      </script>
+    </div>
+    <h5>Div-4</h5>
+    <div id="div-4">
+      <script type="text/javascript">
+        googletag.cmd.push(function () {
+          googletag.display('div-4');
+        });
+      </script>
+    </div>
+  </body>
+</html>

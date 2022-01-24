@@ -1,0 +1,23 @@
+{
+  "name": "tl-test-pages",
+  "version": "1.0.0",
+  "description": "A repository for various Prebid test pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickloughrey/tl-test-pages.git"
+  },
+  "author": "Patrick Loughrey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrickloughrey/tl-test-pages/issues"
+  },
+  "homepage": "https://github.com/patrickloughrey/tl-test-pages#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "path": "^0.12.7"
+  }
+}
