@@ -5,8 +5,8 @@ const path = require('path');
 const router = express.Router();
 
 // Serve file from directory
-router.get('/video',function(req,res){
-    res.sendFile(path.join(__dirname+'video/video.html'));
+router.get('/banner',function(req,res){
+    res.sendFile(path.join(__dirname+'/banner/banner.html'));
 });
   
 router.get('/native',function(req,res){
@@ -14,6 +14,7 @@ router.get('/native',function(req,res){
 });
   
 app.use('/', router);
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT);
+

@@ -1,0 +1,300 @@
+<html>
+    <head>
+        <!-- 1plusX -->
+    <script>
+        (function (o, n, e, p, l, u, s) {
+          o[l] =
+            o[l] ||
+            function () {
+              (o[l].q = o[l].q || []).push(arguments);
+            };
+          u = n.createElement(e);
+          u.async = 1;
+          u.src = p;
+          s = n.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(u, s);
+        })(window, document, 'script', 'https://cdn.opecloud.com/ope-dmplite-debug.js', 'ope');
+        ope('dmplite', 'init', 'a1', 'implied');
+      </script>
+      <!-- end 1plusX -->
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+        <script async src="http://127.0.0.1:8080/prebid.js"></script>
+        
+        <script>
+            var sizes = [
+                [300, 250]
+            ];
+            var PREBID_TIMEOUT = 1000;
+            var FAILSAFE_TIMEOUT = 3000;
+
+            var adUnits = [
+                {
+                    code: '/19968336/header-bid-tag-0',
+                    mediaTypes: {
+                        banner: {
+                            sizes: sizes
+                        }
+                    },
+                    bids: [{
+                        bidder: 'triplelift',
+                        params: {
+                            inventoryCode: 'makers_alley_main'
+                        }
+                    }]
+            }];
+
+
+            var conf = {
+                ortb2: {
+                    site: {
+                        name: "example",
+                        domain: "page.example.com",
+                        cat: ["IAB2"],
+                        sectioncat: ["IAB2-2"],
+                        pagecat: ["IAB2-2"],
+                        page: "https://page.example.com/here.html",
+                        ref: "https://ref.example.com",
+                        keywords: "power tools, drills",
+                        search: "drill",
+                        content: {
+                            userrating: "4",
+                            data: [
+                            {
+                                name: "www.dataprovider1.com",
+                                ext: { segtax: 1 },
+                                segment: [{ id: "687" }, { id: "123" }],
+                            },
+                            ],
+                        },
+                    ext: {
+                        data: {
+                        pageType: "article",
+                        category: "repair",
+                        },
+                    },
+                    },
+                    user: {
+                    yob: 1985,
+                    gender: "m",
+                    keywords: "a,b",
+                    data: [
+                        {
+                        name: "dataprovider.com",
+                        ext: { segtax: 3 },
+                        segment: [{ id: "1" }],
+                        },
+                        {
+                        name: "dataprovider.com",
+                        ext: { segtax: 4 },
+                        segment: [{ id: "2" }],
+                        },
+                    ],
+                    ext: {
+                        data: {
+                        registered: true,
+                        interests: ["cars"],
+                        },
+                    },
+                    },
+                }
+            }
+
+            var userIds = {
+                userSync: {
+                    userIds: [
+                        {
+                            name: "33acrossId",
+                            params: {
+                                pid: "0010b00002GYU4eBAH" // Example ID
+                            },
+                            storage: {
+                                name: "33acrossId",
+                                type: "html5",
+                                expires: 90,
+                                refreshInSeconds: 8 * 3600
+                            }
+                        },
+                        {
+                            name: "unifiedId",
+                            params: {
+                                url: "//match.adsrvr.org/track/rid?ttd_pid=MyTtidPid&fmt=json"
+                            },
+                            storage: {
+                                type: "cookie",
+                                name: "pbjs-unifiedid",       // create a cookie with this name
+                                expires: 60                   // cookie can last for 60 days
+                            }
+                        },
+                        {
+                            name: "identityLink",
+                            params: {
+                                pid: '999',                // Set your valid Placement ID here
+                                // notUse3P: true/false    // If you do not want to use cookieable envelopes until the user authenticates set this property to true
+                            },
+                            storage: {
+                                type: "cookie",
+                                name: "idl_env",           // "idl_env" is the required storage name
+                                expires: 15,               // Cookie can last for 15 days
+                                refreshInSeconds: 1800
+                            }
+                        },
+                        {
+                            name: "britepoolId",
+                            storage: {
+                                name: "britepoolid",
+                                type: "cookie",
+                                expires: 30
+                            },
+                            params: {
+                                url: "https://sandbox-api.britepool.com/v1/britepool/id", // optional. used for testing
+                                api_key: "xxx", // provided by britepool
+                                hash: "yyyy", // example identifier
+                                ssid: "r894hvfnviurfincdejkencjcv" // example identifier
+                            }
+                        },
+                        {
+                            name: 'admixerId',
+                            storage: {
+                                name: 'admixerId',
+                                type: 'cookie',
+                                expires: 30
+                            },
+                            params: {
+                                pid: '4D393FAC-B6BB-4E19-8396-0A4813607316', // example id
+                                e: '3d400b57e069c993babea0bd9efa79e5dc698e16c042686569faae20391fd7ea', // example hashed email (sha256)
+                                p: '05de6c07eb3ea4bce45adca4e0182e771d80fbb99e12401416ca84ddf94c3eb9' //example hashed phone (sha256)
+                            }
+                        },
+                        {
+                            name: 'qid',
+                            storage: {
+                                name: 'qid',
+                                type: 'html5',
+                                expires: 365
+                            }
+                        },
+                        {
+                            name: 'adtelligent'
+                        },
+                        {
+                            name: 'amxId',
+                            storage: {
+                                name: 'amxId',
+                                type: 'html5',
+                                expires: 14
+                            }
+                        },
+                        {
+                            name: 'cpexId'
+                        },
+                        {
+                            name: 'dacId'
+                        },
+                        {
+                            name: 'dmdId',
+                            storage: {
+                                name: 'dmd-dgid',
+                                type: 'cookie',
+                                expires: 30
+                            },
+                            params: {
+                                api_key: '3fdbe297-3690-4f5c-9e11-ee9186a6d77c', // provided by DMD
+                            }
+                        },
+                        {
+                            name: "ftrackId",
+                            storage: {
+                                type: "html5",
+                                name: "ftrackId",
+                                expires: 90,
+                                refreshInSeconds: 8*3600
+                            },
+                            params: {
+                                url: 'https://d9.flashtalking.com/d9core', // required, if not populated ftrack will not run
+                            }
+                        }
+                    ]
+                }
+            };
+
+        // ======== DO NOT EDIT BELOW THIS LINE =========== //
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
+
+        googletag.cmd.push(function() {
+            googletag.pubads().disableInitialLoad();
+
+            googletag.defineSlot('/19968336/header-bid-tag-1', sizes, 'div-1')
+                .addService(googletag.pubads());
+
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+
+            // pbjs.setConfig({
+            //     consentManagement: {
+            //         gdpr: {
+            //         cmpApi: 'static',
+            //         consentData: {
+            //             getTCData: {
+            //             tcString: 'abc123',
+            //             gdprApplies: true
+            //             }
+            //         }
+            //         }
+            //     }
+            // });
+
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(adUnits);
+                pbjs.bidderSettings = {
+                    triplelift: {
+                        storageAllowed: true, 
+                        allowZeroCpmBids: true,
+                        suppressEmptyKeys: true
+                    }
+                }
+                pbjs.setConfig(conf);
+                pbjs.setConfig(userIds);
+                pbjs.requestBids({
+                    bidsBackHandler: initAdserver,
+                    timeout: PREBID_TIMEOUT
+                });
+            });
+        });
+
+        function initAdserver() {
+            if (pbjs.initAdserverSet) return;
+            pbjs.initAdserverSet = true;
+            googletag.cmd.push(function() {
+                pbjs.setTargetingForGPTAsync && pbjs.setTargetingForGPTAsync();
+                googletag.pubads().refresh();
+            });
+        }
+            
+        // in case PBJS doesn't load
+        setTimeout(function() {
+            initAdserver();
+        }, FAILSAFE_TIMEOUT);
+
+        </script>
+
+    </head>
+
+    <body>
+        <h2>Basic Prebid.js Example</h2>
+        <h5>Div-1</h5>
+        <div id='div-1'>
+            <script type='text/javascript'>
+                googletag.cmd.push(function() {
+                    googletag.display('div-1');
+                });
+
+            </script>
+        </div>
+    </body>
+
+</html>
